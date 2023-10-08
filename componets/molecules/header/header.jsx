@@ -1,5 +1,5 @@
 import styles from "./header.module.css";
-export const Header = ({updateCity, updatePrice, updateSize}) => {
+export const Header = ({updateCity, updatePrice, updateSize, changeDateTo, changeDateFrom}) => {
     return (
         <>
             <header className={styles.header}>
@@ -19,10 +19,12 @@ export const Header = ({updateCity, updatePrice, updateSize}) => {
                     </select>
 
                     <input
+                        onChange={(e)=>changeDateTo(e.target.value)}
                         type="date"
                         className={`$styles.filtersBox__input} ${styles.input}`}
                     />
                     <input
+                        onChange={(e)=>changeDateFrom(e.target.value)}
                         type="date"
                         className={`$styles.filtersBox__input} ${styles.input}`}
                     />
