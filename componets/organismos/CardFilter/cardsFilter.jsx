@@ -12,7 +12,7 @@ export const CardsFilter = () => {
     const [selectedPrice, setSelectedPrice] = useState("all");
     const [selectedSize, setSelectedSize] = useState ("all")
 
-    // console.log({selectedSize});
+    console.log({selectedSize});
 
     const filterHotels = (hotels) => {
 
