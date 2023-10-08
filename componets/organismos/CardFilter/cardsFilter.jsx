@@ -4,22 +4,42 @@ import { hotelData } from "../../../services/getHotelServices";
 import { CardHotel } from "../../molecules/card/card";
 import { Header } from "../../molecules/header/header";
 import styles from "./cardsFilers.module.css";
+import { hotelRooms } from "@/app/utils/helper";
 
 export const CardsFilter = () => {
-    const [selectCountry, setSelectedCountry] = useState("all");
+    
+    const [selectedCountry, setSelectedCountry] = useState("all");
+    const [selectedPrice, setSelectedPrice] = useState("all");
+    const [selectedSize, setSelectedSize] = useState ("all")
 
-    const filterHotels = () => {
-        const filteredHotels = hotelData.filter((hotel) => hotel.rooms===11)
-            return filterHotels
+    // console.log({selectedSize});
+
+    const filterHotels = (hotels) => {
+
+        const filteredHotels = hotels.filter((hotel) => {
+            const isCountryMatch = selectedCountry ==='all' || selectedCountry.toLocaleLowerCase() === hotel.country.toLocaleLowerCase()
+
+            const isPriceMatch = selectedPrice === 'all' || selectedPrice.toString() == hotel.price.toString()
+
+            const isSizeMatch = selectedSize === 'all' || selectedSize === hotelRooms(hotel.rooms)
+
+            console.log(selectedSize);
+
+            return isCountryMatch && isPriceMatch && isSizeMatch
+        })
+
+        return filteredHotels
     };
-
-    filterHotels();
 
     return (
         <>
-            <Header />
+            <Header 
+                updateCity= {setSelectedCountry}
+                updatePrice= {setSelectedPrice}
+                updateSize= {setSelectedSize}
+                />
             <div className={styles.cardsContainer}>
-                {hotelData.map((hotel, index) => (
+                {filterHotels(hotelData).map((hotel, index) => (
                     <CardHotel key={index} hotel={hotel} />
                 ))}
             </div>

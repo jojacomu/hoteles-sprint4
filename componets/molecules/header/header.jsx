@@ -1,11 +1,12 @@
 import styles from "./header.module.css";
-export const Header = () => {
+export const Header = ({updateCity, updatePrice, updateSize}) => {
     return (
         <>
             <header className={styles.header}>
                 <h1 className={styles.header__title}>Book It</h1>
                 <div className={styles.filtersBox}>
                     <select
+                        onChange={(e)=>updateCity(e.target.value)}
                         name=""
                         id=""
                         className={`${styles.filtersBox__country} ${styles.input}`}
@@ -27,18 +28,20 @@ export const Header = () => {
                     />
 
                     <select
+                        onChange={(e)=>updatePrice(e.target.value)}
                         name=""
                         id=""
                         className={`${styles.input} ${styles.input}`}
                     >
                         <option value="all">All Prices</option>
-                        <option value="S">$</option>
-                        <option value="$$">$$</option>
-                        <option value="$$">$$$</option>
-                        <option value="$$$$">$$$$</option>
+                        <option value="1">$</option>
+                        <option value="2">$$</option>
+                        <option value="3">$$$</option>
+                        <option value="4">$$$$</option>
                     </select>
 
                     <select
+                        onChange={(e)=>updateSize(e.target.value)}
                         name=""
                         id=""
                         className={`${styles.filtersBox__country} ${styles.input}`}
