@@ -1,12 +1,20 @@
 import styles from "./header.module.css";
-export const Header = ({updateCity, updatePrice, updateSize, changeDateTo, changeDateFrom}) => {
+export const Header = ({
+    updateCity,
+    updatePrice,
+    updateSize,
+    changeDateTo,
+    changeDateFrom,
+}) => {
+    const fecha = new Date().setHours(0,0,0,0)
+    const today = new Date(fecha).toISOString().split('T')[0];
     return (
         <>
             <header className={styles.header}>
                 <h1 className={styles.header__title}>Book It</h1>
                 <div className={styles.filtersBox}>
                     <select
-                        onChange={(e)=>updateCity(e.target.value)}
+                        onChange={(e) => updateCity(e.target.value)}
                         name=""
                         id=""
                         className={`${styles.filtersBox__country} ${styles.input}`}
@@ -19,18 +27,20 @@ export const Header = ({updateCity, updatePrice, updateSize, changeDateTo, chang
                     </select>
 
                     <input
-                        onChange={(e)=>changeDateTo(e.target.value)}
+                        min = {today}
+                        onChange={(e) => changeDateFrom(e.target.value)}
                         type="date"
                         className={`$styles.filtersBox__input} ${styles.input}`}
                     />
                     <input
-                        onChange={(e)=>changeDateFrom(e.target.value)}
+                        min = {today}
+                        onChange={(e) => changeDateTo(e.target.value)}
                         type="date"
                         className={`$styles.filtersBox__input} ${styles.input}`}
                     />
 
                     <select
-                        onChange={(e)=>updatePrice(e.target.value)}
+                        onChange={(e) => updatePrice(e.target.value)}
                         name=""
                         id=""
                         className={`${styles.input} ${styles.input}`}
@@ -43,7 +53,7 @@ export const Header = ({updateCity, updatePrice, updateSize, changeDateTo, chang
                     </select>
 
                     <select
-                        onChange={(e)=>updateSize(e.target.value)}
+                        onChange={(e) => updateSize(e.target.value)}
                         name=""
                         id=""
                         className={`${styles.filtersBox__country} ${styles.input}`}

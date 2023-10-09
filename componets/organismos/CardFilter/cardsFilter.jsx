@@ -10,15 +10,27 @@ export const CardsFilter = () => {
     const [selectedCountry, setSelectedCountry] = useState("all");
     const [selectedPrice, setSelectedPrice] = useState("all");
     const [selectedSize, setSelectedSize] = useState("all");
-    const [dateTo, setDateTo] = useState("all");
     const [dateFrom, setDateFrom] = useState("all");
+    const [dateTo, setDateTo] = useState("all");
 
     const filterHotels = (hotels) => {
         const newDateTo = new Date(dateTo);
         const newDateFrom = new Date(dateFrom);
-        console.log(newDateTo, newDateFrom);
+        // const newDateLocalFrom = new Date(
+        //     newDateFrom.getTime() + newDateFrom.getTimezoneOffset() * 60000
+        // );
+        // const newDateLocalTo = new Date(
+        //     newDateTo.getTime() + newDateTo.getTimezoneOffset() * 60000
+        // );
+        // console.log(newDateLocalFrom, newDateLocalTo);
+        const newDateFromMs = newDateFrom.getTime();
+        const newDateToMs = newDateTo.getTime();
+        const today = new Date().setHours(0, 0, 0, 0);
 
         const filteredHotels = hotels.filter((hotel) => {
+            const availabilityHotels = today + hotel.availabilityFrom;
+            const availabilityDays = availabilityHotels + hotel.availabilityTo;
+
             const isCountryMatch =
                 selectedCountry === "all" ||
                 selectedCountry.toLocaleLowerCase() ===
@@ -31,6 +43,11 @@ export const CardsFilter = () => {
             const isSizeMatch =
                 selectedSize === "all" ||
                 selectedSize === hotelRooms(hotel.rooms);
+
+            const availability =
+                (dateTo === "all" && dateFrom === "all") ||
+                (newDateToMs >= availabilityHotels &&
+                    newDateFromMs <= availabilityDays);
 
             console.log(selectedSize);
 
