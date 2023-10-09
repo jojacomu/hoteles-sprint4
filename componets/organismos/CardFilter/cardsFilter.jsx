@@ -74,7 +74,6 @@ export const CardsFilter = () => {
                     ))
                 ) : (
                     <AlertHelp severity="info">
-                        {/* <AlertTitle>Info</AlertTitle> */}
                         <h2>No hay hoteles para las opciones escogidas</h2>
                         <strong>Por favor utilice otros filtros</strong>
                     </AlertHelp>
