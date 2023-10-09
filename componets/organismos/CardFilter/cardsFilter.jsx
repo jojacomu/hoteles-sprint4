@@ -5,6 +5,7 @@ import { CardHotel } from "../../molecules/card/card";
 import { Header } from "../../molecules/header/header";
 import styles from "./cardsFilers.module.css";
 import { hotelRooms } from "@/app/utils/helper";
+import AlertHelp from "../../atoms/alert/alerthelp";
 
 export const CardsFilter = () => {
     const [selectedCountry, setSelectedCountry] = useState("all");
@@ -72,7 +73,11 @@ export const CardsFilter = () => {
                         <CardHotel key={index} hotel={hotel} />
                     ))
                 ) : (
-                    <h2>No hay hoteles para las opciones escogidas</h2>
+                    <AlertHelp severity="info">
+                        {/* <AlertTitle>Info</AlertTitle> */}
+                        <h2>No hay hoteles para las opciones escogidas</h2>
+                        <strong>Por favor utilice otros filtros</strong>
+                    </AlertHelp>
                 )}
             </div>
         </>

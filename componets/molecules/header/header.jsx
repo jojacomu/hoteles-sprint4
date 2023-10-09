@@ -1,3 +1,4 @@
+import ButtonClear from "../../atoms/button-clear/button-clear";
 import styles from "./header.module.css";
 export const Header = ({
     updateCity,
@@ -63,6 +64,7 @@ export const Header = ({
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
                     </select>
+                    <ButtonClear/>
                 </div>
             </header>
         </>
