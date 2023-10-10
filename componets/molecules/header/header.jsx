@@ -1,4 +1,4 @@
-import ButtonClear from "../../atoms/button-clear/button-clear";
+import ButtonClear from "../../atoms/button-clear/Button-clear";
 import styles from "./header.module.css";
 export const Header = ({
     updateCity,
