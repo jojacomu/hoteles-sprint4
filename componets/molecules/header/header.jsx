@@ -1,3 +1,4 @@
+import ButtonClear from "../../atoms/button-clear/Button-clear";
 import styles from "./header.module.css";
 export const Header = ({
     updateCity,
@@ -63,7 +64,9 @@ export const Header = ({
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
                     </select>
+                    <ButtonClear className={styles.filtersBox__btn}>Clear</ButtonClear>
                 </div>
+                <h2 className={styles.header__subtitle}>We have fun for you</h2>
             </header>
         </>
     );
