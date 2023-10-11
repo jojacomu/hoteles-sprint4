@@ -9,8 +9,9 @@ import { MainButton } from "../../atoms/main-button/Main-button";
 import Link from "next/link";
 
 export const CardHotel = ({ hotel, snackbar }) => {
-    const { name } = hotel;
-    const handleClick = () => {};
+    // const { name } = hotel;
+    const handleClick = () => {
+        localStorage.setItem("selectedHotel", JSON.stringify(hotel));}
     return (
         <>
             <Card sx={{ maxWidth: 345 }}>
@@ -61,10 +62,11 @@ export const CardHotel = ({ hotel, snackbar }) => {
                     >
                         Compartir
                     </MainButton>
-                    <Link href={`detail/${name}}`}>
+                    <Link href={`detail/${ hotel.name }`}>
                         <MainButton
                             size="small"
                             className={styles.buttonCardHotel}
+                            onClick={handleClick}
                         >
                             Detalles
                         </MainButton>
