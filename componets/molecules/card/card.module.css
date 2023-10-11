@@ -20,6 +20,10 @@
     font-weight: bold;
 }
 
+.containerButton {
+    gap:10px
+}
+
 .buttonCardHotel {
     font-size: 14px;
     font-weight: bold;

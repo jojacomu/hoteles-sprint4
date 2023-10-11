@@ -1,0 +1,87 @@
+.container{
+    background: white;
+    box-shadow: rgba(16, 15, 15, 0.1) 8px 0.25rem 0.5rem;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 50vh;
+    gap: 10px;
+}
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.buttonCardHotel {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #e26811;
+    width: 120px;
+}
+
+.buttonCardHotel:hover {
+    color: #e26811;
+    border: 1px solid #e26811;
+}
+
+.buttonSecondary {
+    font-size: 14px;
+    font-weight: bold;
+    color: #e26811;
+    background-color: white;
+    border: #e26811 solid 1px;
+    width: 120px;
+}
+
+.buttonSecondary:hover {
+    color: #e26811;
+    border: 1px solid #ffffff;
+}
+.menuContainer {
+    width: 100%;
+    position: fixed;
+    height: 50px;
+    margin-bottom: 100px;
+    top: 0px;
+    background-color: #75716ec2;
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    flex: 1; /* El texto se expandirá para ocupar el espacio disponible */
+    text-align: center;
+}
+
+.contentMenu {
+    display: flex;
+    gap: 10px;
+}
+
+.optionMenu {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-weight: bold;
+}
+
+.optionMenu:hover {
+    font-weight: bold;
+    cursor: pointer;
+    color: #e26811;
+}
+
+.detailImage {
+    border-radius: 10px;
+    border: 2px solid #e26811;
+}

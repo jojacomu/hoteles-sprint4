@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { CardHotel } from "../../molecules/card/card";
 import { Header } from "../../molecules/header/header";
 import styles from "./cardsFilers.module.css";
-import { hotelRooms } from "@/app/utils/helper";
+import { hotelRooms } from "@/utils/helper";
 import AlertHelp from "../../atoms/alert/alerthelp";
 import { Alert, Snackbar } from "@mui/material";
 
