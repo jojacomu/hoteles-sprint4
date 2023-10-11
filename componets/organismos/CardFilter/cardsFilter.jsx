@@ -1,11 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CardHotel } from "../../molecules/card/card";
 import { Header } from "../../molecules/header/header";
 import styles from "./cardsFilers.module.css";
 import { hotelRooms } from "@/utils/helper";
 import AlertHelp from "../../atoms/alert/alerthelp";
-import { Alert, Snackbar } from "@mui/material";
+import { Alert, AlertTitle,Snackbar } from "@mui/material";
+import { AppContext } from "@/app/store/CurrentProvider";
 
 export const CardsFilter = ({ getDataHotels }) => {
     const [selectedCountry, setSelectedCountry] = useState("all");
@@ -15,6 +16,11 @@ export const CardsFilter = ({ getDataHotels }) => {
     const [dateTo, setDateTo] = useState("all");
     const [filterHotels, setFilterHotels] = useState([]);
     const [setshowSnackbar, setShowSnackbar] = useState(false);
+    const { setHomePage } = useContext(AppContext);
+
+    useEffect(() => {
+        setHomePage();
+    }, []);
     // const [hotelsData, setHotelsData] = useState([]);
 
     // const fetchHotels = async () => {

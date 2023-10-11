@@ -1,21 +1,23 @@
 import { createContext, useState } from "react";
 
-export const AppContext = createContext()
+export const AppContext = createContext();
 
-export const CurrentPageProvider = ({children}) => {
-    const [currentPage, setCurrentPage] = useState('Home')
-    
+export const CurrentPageProvider = ({ children }) => {
+    const [currentPage, setCurrentPage] = useState("Home");
+
     const setDetailPage = () => {
-        setCurrentPage("Details")
-    }
+        setCurrentPage("Details");
+    };
 
     const setHomePage = () => {
-        setCurrentPage("Home")
-    }
+        setCurrentPage("Home");
+    };
 
     return (
-        <AppContext.Provider value={{currentPage, setDetailPage, setHomePage}}>
+        <AppContext.Provider
+            value={{ currentPage, setDetailPage, setHomePage }}
+        >
             {children}
         </AppContext.Provider>
-    )
-}
+    );
+};
