@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={fonts.className}>
-            <MenuMain></MenuMain>
+            <MenuMain/>
             {children}
             </body>
         </html>

@@ -4,25 +4,25 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import styles from "./Menus.module.css"
-// import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export const MenuMain = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" className={styles.containerMenu}>
-                <Toolbar variant="dense">
+                <Toolbar variant="dense" className={styles.optionMenu}>
                     <IconButton
                         edge="start"
                         color="inherit"
                         aria-label="menu"
                         sx={{ mr: 2 }}
                     >
-                        {/* <MenuIcon /> */}
+                        <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" color="inherit" component="div">
+                    <Typography variant="h6" color="inherit" component="div" className={styles.labelMenu}>
                         Home
                     </Typography>
-                    <Typography variant="h6" color="inherit" component="div">
+                    <Typography variant="h6" color="inherit" component="div" className={styles.labelMenu}>
                         Reservas
                     </Typography>
                 </Toolbar>

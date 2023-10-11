@@ -64,8 +64,9 @@ export const Header = ({
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
                     </select>
-                    <ButtonClear/>
+                    <ButtonClear className={styles.filtersBox__btn}>Clear</ButtonClear>
                 </div>
+                <h2 className={styles.header__subtitle}>We have fun for you</h2>
             </header>
         </>
     );
