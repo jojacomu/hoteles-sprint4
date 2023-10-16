@@ -6,7 +6,7 @@ export const CurrentPageProvider = ({ children }) => {
     const [currentPage, setCurrentPage] = useState("Home");
 
     const setDetailPage = () => {
-        setCurrentPage("Details");
+        setCurrentPage("Detail");
     };
 
     const setHomePage = () => {
