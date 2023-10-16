@@ -10,7 +10,7 @@ const fonts = Inter({
     weight: ["400", "500", "700", "800", "900"],
 });
 
-export const metadata = {
+const metadata = {
     title: "Hotels - JC",
     description: "Sitio para reservas de hoteles",
 };
