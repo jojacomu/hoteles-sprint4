@@ -38,7 +38,7 @@ export const MenuMain = () => {
                     <Link href={"/"}>
                         <Typography
                             variant="h6"
-                            color="inherit"
+                            color="white"
                             component="div"
                             className={styles.labelMenu}
                         >
@@ -48,7 +48,7 @@ export const MenuMain = () => {
                     <Link href={"/reservas"}>
                     <Typography
                         variant="h6"
-                        color="inherit"
+                        color="white"
                         component="div"
                         className={styles.labelMenu}
                     >

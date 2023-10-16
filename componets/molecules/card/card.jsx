@@ -96,7 +96,6 @@ export const CardHotel = ({ hotel, snackbar }) => {
                     </Link>
                     <MainButton
                         size="small"
-                        className={styles.buttonCardHotel}
                         onClick={handleReservation}
                     >
                         Reservas
