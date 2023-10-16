@@ -1,22 +1,27 @@
-.containerMenu{
+.containerMenu {
     position: fixed;
+    display: flex;
     display: block;
-    background-color:rgba(128, 128, 128, 0.51);
+    background-color: rgba(128, 128, 128, 0.51);
     margin-bottom: 10px;
     gap: 1.5rem;
 }
-.optionMenu{
+.optionMenu {
     display: flex;
     justify-content: flex-end;
     gap: 1.5rem;
     color: rgb(255, 255, 255);
 }
-.labelMenu{
+.labelMenu {
     color: rgb(255, 255, 255);
     font-weight: bold;
 }
-.labelMenu:hover{
+.labelMenu:hover {
     color: rgb(241, 61, 7);
     font-weight: bold;
     cursor: pointer;
+}
+.subtitle {
+    display: flex;
+    justify-content: flex-start;
 }

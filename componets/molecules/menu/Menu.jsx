@@ -25,6 +25,7 @@ export const MenuMain = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" className={styles.containerMenu}>
+            <h2 className={styles.subtitle}>{title(currentPage)}</h2>
                 <Toolbar variant="dense" className={styles.optionMenu}>
                     <IconButton
                         edge="start"
@@ -34,7 +35,6 @@ export const MenuMain = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <h3>{title(currentPage)}</h3>
                     <Link href={"/"}>
                         <Typography
                             variant="h6"
@@ -45,6 +45,7 @@ export const MenuMain = () => {
                             Home
                         </Typography>
                     </Link>
+                    <Link href={"/reservas"}>
                     <Typography
                         variant="h6"
                         color="inherit"
@@ -53,6 +54,7 @@ export const MenuMain = () => {
                     >
                         Reservas
                     </Typography>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </Box>

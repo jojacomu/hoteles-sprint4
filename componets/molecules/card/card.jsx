@@ -7,11 +7,34 @@ import Typography from "@mui/material/Typography";
 import styles from "./card.module.css";
 import { MainButton } from "../../atoms/main-button/Main-button";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { addReservation } from "@/app/store/reservasSlice";
 
 export const CardHotel = ({ hotel, snackbar }) => {
-    // const { name } = hotel;
+    const dispatch = useDispatch();
+
+    const listHotelsReservation = useSelector(
+        (state) => state.reservation.hotelsReservation
+    );
+
     const handleClick = () => {
-        localStorage.setItem("selectedHotel", JSON.stringify(hotel));}
+        localStorage.setItem("selectedHotel", JSON.stringify(hotel));
+    };
+
+    const handleReservation = () => {
+        const hotelExists = listHotelsReservation.some(
+            (hotels) => hotels.name === hotel.name
+        );
+        if (hotelExists) {
+            alert("Hotel ya está reservado");
+        } else {
+            console.log("Hotel reservado");
+            // alert("Hotel reservado");
+            dispatch(addReservation(hotel));
+            snackbar(true);
+        }
+    };
+
     return (
         <>
             <Card sx={{ maxWidth: 345 }}>
@@ -62,7 +85,7 @@ export const CardHotel = ({ hotel, snackbar }) => {
                     >
                         Compartir
                     </MainButton>
-                    <Link href={`detail/${ hotel.name }`}>
+                    <Link href={`detail/${hotel.name}`}>
                         <MainButton
                             size="small"
                             className={styles.buttonCardHotel}
@@ -74,7 +97,7 @@ export const CardHotel = ({ hotel, snackbar }) => {
                     <MainButton
                         size="small"
                         className={styles.buttonCardHotel}
-                        onClick={() => snackbar(true)}
+                        onClick={handleReservation}
                     >
                         Reservas
                     </MainButton>
